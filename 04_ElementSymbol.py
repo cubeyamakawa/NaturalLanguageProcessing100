@@ -12,5 +12,6 @@ for i in range(len(words)-1):
 	else:
 		diction[i*2] = word[0]+word[1]
 		diction[i*2+1] = i+1
+
 diction = dict(zip(diction[0::2],diction[1::2]))
 print(diction)
