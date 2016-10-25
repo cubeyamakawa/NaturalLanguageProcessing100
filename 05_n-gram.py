@@ -1,9 +1,13 @@
-#05. n-gram
-#与えられたシーケンス（文字列やリストなど）からn-gramを作る関数を作成せよ．この関数を用い，"I am an NLPer"という文から単語bi-gram，文字bi-gra
+import re
 
-import ngram
+def n_gram(uni, n):
+	for k in range(len(uni)-n+1):
+		print(uni[k:k+n])
 
-text = u'あいうえお'
-index = ngram.NGram(N=2)
-for term in index.ngrams(index.pad(text)):
-    print term
+str = "I am an NLPer"
+
+words = re.split('\W+', str)
+chara = [k for k in str if k != " "]
+
+n_gram(words, 2)
+n_gram(chara, 2)
